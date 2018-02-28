@@ -1,0 +1,15 @@
+{
+  "name": "upromise",
+  "version": "0.0.1",
+  "description": "Micro promise library",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/finwo/js-upromise"
+  },
+  "author": "Robin Bron <robin@finwo.nl>",
+  "license": "MIT"
+}
