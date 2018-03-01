@@ -18,8 +18,8 @@ function UPromise(cb) {
         return (this.__catch || console.error)(e);
       }
     }
-    if (result instanceof UPromise) {
-      result.then(this.__next && this.__next.start || function () {});
+    if ( result && ( 'function' === typeof result.then ) ) {
+      result.then(this.__next && this.__next.start || function(){}, this.__catch || console.error );
       if(!result.__started) result.start();
     } else if (result !== undefined) {
       this.__next && this.__next.start && this.__next.start(result);
