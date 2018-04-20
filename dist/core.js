@@ -41,6 +41,12 @@ function onResolve( data ) {
     return;
   }
 
+  // If the resolve is a value already, run the next entry using it as data
+  if ( 'function' !== typeof next.resolve ) {
+    onResolve.call(self,next.resolve);
+    return;
+  }
+
   // Run whatever's next
   try {
     var result = next.resolve(data);

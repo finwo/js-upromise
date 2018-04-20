@@ -1,4 +1,4 @@
-// Build by finwo on Fri Apr 20 15:35:34 CEST 2018
+// Build by finwo on Fri Apr 20 15:57:00 CEST 2018
 (function(factory) {
   /** global: define */
   if ( ( 'undefined' !== module ) && ( 'undefined' !== module.exports ) ) {
@@ -105,6 +105,12 @@ function onResolve( data ) {
       onResolve.call(next.prom, data);
     }
 
+    return;
+  }
+
+  // If the resolve is a value already, run the next entry using it as data
+  if ( 'function' !== typeof next.resolve ) {
+    onResolve.call(self,next.resolve);
     return;
   }
 
