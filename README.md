@@ -13,9 +13,15 @@ A tiny promise library
 
 ## Contents
 
+- [Introduction](#introduction)
 - [Installation](#installation)
 - [Contributing guidelines](#contributing)
 - [License](#license)
+
+## Introduction
+
+UPromise is a promise library aimed at simple & readable code. Useful if you want to know how a Promise would work internally.
+The bits that have been implemented are based upon [Bluebird](https://github.com/petkaantonov/bluebird), [MiniPromise](https://gist.github.com/finwo/dc2f148ad937454d988f0b43807fca38) and [Mozilla's Promise documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 
 ## Installation
 
