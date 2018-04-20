@@ -15,6 +15,7 @@ A tiny promise library
 
 - [Introduction](#introduction)
 - [Installation](#installation)
+- [API](#usage)
 - [Contributing guidelines](#contributing)
 - [License](#license)
 
@@ -28,6 +29,10 @@ The bits that have been implemented are based upon [Bluebird](https://github.com
 ```sh
 npm install --save upromise
 ```
+
+## Usage
+
+TODO (just like the individual functions of this lib)
 
 ## Contributing
 
