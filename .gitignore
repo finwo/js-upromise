@@ -1,3 +1,6 @@
 .zedstate
 node_modules/
 .idea/
+test-output.txt
+coverage/
+.nyc_output/

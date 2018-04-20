@@ -1,4 +1,4 @@
-// Build by finwo on Fri Apr 20 15:57:00 CEST 2018
+// Build by finwo on Fri Apr 20 16:01:40 CEST 2018
 (function(factory) {
   /** global: define */
   if ( ( 'undefined' !== module ) && ( 'undefined' !== module.exports ) ) {
@@ -230,7 +230,7 @@ UPromise.race = function( iterable ) {
           if (finished) return;
           finished = true;
           reject(reason);
-        })
+        });
     });
   });
 };
