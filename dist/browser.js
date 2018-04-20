@@ -1,4 +1,4 @@
-// Build by finwo on Fri Apr 20 15:14:08 CEST 2018
+// Build by finwo on Fri Apr 20 15:35:34 CEST 2018
 (function(factory) {
   /** global: define */
   if ( ( 'undefined' !== module ) && ( 'undefined' !== module.exports ) ) {
@@ -201,12 +201,32 @@ UPromise.reject = function (reason) {
   return Object.assign(Object.create(UPromise.prototype), defaultData, {__state : 'rejected', __error : reason});
 };
 
-UPromise.all = function (arr, data) {
-  var q = UPromise.resolve(data);
-  arr.forEach(function(entry) {
+UPromise.all = function ( iterable ) {
+  var q = UPromise.resolve();
+  iterable.forEach(function(entry) {
     q = q.then(entry);
   });
   return q;
+};
+
+UPromise.race = function( iterable ) {
+  return new UPromise(function(resolve, reject) {
+    var finished = false;
+    iterable.forEach(function(entry) {
+      UPromise
+        .resolve()
+        .then(entry)
+        .then(function( data ) {
+          if ( finished ) return;
+          finished = true;
+          resolve(data);
+        }, function(reason) {
+          if (finished) return;
+          finished = true;
+          reject(reason);
+        })
+    });
+  });
 };
 
 UPromise.prototype.catch = function (reject) {

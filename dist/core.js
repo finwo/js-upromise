@@ -134,12 +134,32 @@ UPromise.reject = function (reason) {
   return Object.assign(Object.create(UPromise.prototype), defaultData, {__state : 'rejected', __error : reason});
 };
 
-UPromise.all = function (arr, data) {
-  var q = UPromise.resolve(data);
-  arr.forEach(function(entry) {
+UPromise.all = function ( iterable ) {
+  var q = UPromise.resolve();
+  iterable.forEach(function(entry) {
     q = q.then(entry);
   });
   return q;
+};
+
+UPromise.race = function( iterable ) {
+  return new UPromise(function(resolve, reject) {
+    var finished = false;
+    iterable.forEach(function(entry) {
+      UPromise
+        .resolve()
+        .then(entry)
+        .then(function( data ) {
+          if ( finished ) return;
+          finished = true;
+          resolve(data);
+        }, function(reason) {
+          if (finished) return;
+          finished = true;
+          reject(reason);
+        })
+    });
+  });
 };
 
 UPromise.prototype.catch = function (reject) {
