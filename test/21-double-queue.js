@@ -27,7 +27,7 @@ it('Test for double-stack execution', function() {
       expect(cnt).to.equal(2);
       resolve();
     },100);
-  }).catch(function(m) {
+  }).catch(function() {
     throw new Error("Was not supposed to fail");
   });
 });
