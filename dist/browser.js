@@ -1,4 +1,4 @@
-// Build by finwo on Mon Apr 23 16:27:23 CEST 2018
+// Build on Mon Apr 23 16:42:04 CEST 2018 by finwo
 (function(factory) {
   /** global: define */
   if ( ( 'undefined' !== module ) && ( 'undefined' !== module.exports ) ) {

@@ -4,7 +4,8 @@
   "description": "Micro promise library",
   "main": "dist/core.js",
   "scripts": {
-    "test": "DEBUG=1 node_modules/.bin/nyc node_modules/.bin/serial-mocha test/* --sort | tee test-output.txt && ./node_modules/.bin/nyc report --reporter=clover && ! grep -q -oP \"\\d+\\sfailing\" test-output.txt && rm test-output.txt || { echo \"Test output is located in 'test-output.txt'\" ; exit 1 ; }"
+    "test": "DEBUG=1 node_modules/.bin/nyc node_modules/.bin/serial-mocha test/* --sort | tee test-output.txt && ./node_modules/.bin/nyc report --reporter=clover && ! grep -q -oP \"\\d+\\sfailing\" test-output.txt && rm test-output.txt || { echo \"Test output is located in 'test-output.txt'\" ; exit 1 ; }",
+    "build": "bash scripts/build.sh"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
     "mocha": "^5.1.1",
     "nyc": "^11.7.1",
     "serial-mocha": "0.0.4",
-    "trackthis-helpers": "^0.4.2"
+    "trackthis-helpers": "^0.4.2",
+    "uglify-js": "^3.3.22"
   }
 }
