@@ -80,6 +80,7 @@ co(function* () {
 
         // Success!
         done();
+        return undefined;
       });
     }));
   });
