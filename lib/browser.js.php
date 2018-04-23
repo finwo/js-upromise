@@ -44,6 +44,7 @@ function req( $path, $cwd = null ) {
   if(!is_null($cwd)) {
     array_push($required, array(
         'id'      => $id,
+        'path'    => $filename,
         'content' => $contents,
     ));
   }
@@ -70,24 +71,26 @@ function req( $path, $cwd = null ) {
   <?php /* Load our own module */ ?>
   <?php $content = req('./core'); ?>
 
-  // Load modules
-  function _r( name ) {
-    switch(name) {
+  // Our modules
+  var _r = (function() {
+    var m = {
       <?php
         $included = array();
         while(count($required)>0) {
-            $module = array_pop($required);
-            if ( in_array($module['id'], $included)) continue;
-            array_push($included,$module['id']);
-            echo "case '" . $module['id'] . "':".
-                 "return (function() {var module = { exports: undefined };\r\n".
-                 $module['content'].
-                 "\r\nreturn module.exports;})();\r\n";
+          $module = array_pop($required);
+          if ( in_array($module['id'], $included)) continue;
+          array_push($included,$module['id']);
+          echo "'".$module['id']."':(function() {var module = { exports: undefined };\r\n".
+//               "// ".$module['path']."\r\n".
+               $module['content'].
+               "\r\nreturn module.exports;})(),\r\n";
         }
       ?>
-      default: return undefined;
-    }
-  }
+    };
+    return function(n) {
+      return ( n in m ) ? m[n] : undefined;
+    };
+  })();
 
   return (function() {
     var module = { exports: undefined };
