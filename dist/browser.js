@@ -1,4 +1,4 @@
-// Build on Mon Apr 23 18:01:03 CEST 2018 by finwo
+// Build on Mon Apr 23 18:03:20 CEST 2018 by finwo
 
 (function(factory) {
   /** global: define */
@@ -18,8 +18,7 @@
   // Our modules
   var _r = (function() {
     var m = {
-      '6':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/race.js
+      'm':(function() {var module = { exports: undefined };
 module.exports = function(UPromise) {
   return function( iterable ) {
     return new UPromise(function(resolve, reject) {
@@ -43,8 +42,7 @@ module.exports = function(UPromise) {
 };
 
 return module.exports;})(),
-'t':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/all.js
+'jv':(function() {var module = { exports: undefined };
 module.exports = function(UPromise) {
   return function ( iterable ) {
     var q = UPromise.resolve();
@@ -58,11 +56,10 @@ module.exports = function(UPromise) {
 
 
 return module.exports;})(),
-'sf':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/then.js
-var defaultData = _r('s'),
-    noop        = _r('j'),
-    handlers    = _r('b');
+'s':(function() {var module = { exports: undefined };
+var defaultData = _r('j'),
+    noop        = _r('k'),
+    handlers    = _r('5');
 
 module.exports = function(UPromise) {
   return function ( resolve, reject ) {
@@ -89,9 +86,8 @@ module.exports = function(UPromise) {
 };
 
 return module.exports;})(),
-'b':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/handlers.js
-var gettype = _r('0');
+'5':(function() {var module = { exports: undefined };
+var gettype = _r('b');
 
 module.exports = {
   resolve : function (data) {
@@ -203,56 +199,7 @@ var onResolve = module.exports.resolve,
     onReject  = module.exports.reject;
 
 return module.exports;})(),
-'j':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/noop.js
-module.exports = function ( data ) {
-  return data;
-};
-
-return module.exports;})(),
-'s':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/defaultData.js
-module.exports = {
-  __state     : 'pending',
-  __stack     : [],
-  __data      : undefined,
-  __error     : undefined
-};
-
-return module.exports;})(),
-'m':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/catch.js
-var noop = _r('j');
-
-module.exports = function (reject) {
-  return this.then(noop, reject);
-};
-
-return module.exports;})(),
-'7':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/reject.js
-var defaultData = _r('s');
-
-module.exports = function(UPromise) {
-  return function (reason) {
-    return Object.assign(Object.create(UPromise.prototype), defaultData, {__state : 'rejected', __error : reason});
-  };
-};
-
-return module.exports;})(),
-'g':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/resolve.js
-var defaultData = _r('s');
-
-module.exports = function(UPromise) {
-  return function(data) {
-    return ( data && ( 'function' === typeof data.then ) ) ? data : Object.assign(Object.create(UPromise.prototype), defaultData, {__state : 'resolved', __data : data});
-  };
-};
-
-return module.exports;})(),
-'0':(function() {var module = { exports: undefined };
-// /home/finwo/git/finwo/js-upromise/lib/gettype.js
+'b':(function() {var module = { exports: undefined };
 module.exports = function gettype(data) {
   switch (typeof data) {
 
@@ -293,6 +240,49 @@ module.exports = function gettype(data) {
 };
 
 return module.exports;})(),
+'k':(function() {var module = { exports: undefined };
+module.exports = function ( data ) {
+  return data;
+};
+
+return module.exports;})(),
+'j':(function() {var module = { exports: undefined };
+module.exports = {
+  __state     : 'pending',
+  __stack     : [],
+  __data      : undefined,
+  __error     : undefined
+};
+
+return module.exports;})(),
+'y':(function() {var module = { exports: undefined };
+var noop = _r('k');
+
+module.exports = function (reject) {
+  return this.then(noop, reject);
+};
+
+return module.exports;})(),
+'n':(function() {var module = { exports: undefined };
+var defaultData = _r('j');
+
+module.exports = function(UPromise) {
+  return function (reason) {
+    return Object.assign(Object.create(UPromise.prototype), defaultData, {__state : 'rejected', __error : reason});
+  };
+};
+
+return module.exports;})(),
+'d':(function() {var module = { exports: undefined };
+var defaultData = _r('j');
+
+module.exports = function(UPromise) {
+  return function(data) {
+    return ( data && ( 'function' === typeof data.then ) ) ? data : Object.assign(Object.create(UPromise.prototype), defaultData, {__state : 'resolved', __data : data});
+  };
+};
+
+return module.exports;})(),
     };
     return function(n) {
       return ( n in m ) ? m[n] : undefined;
@@ -302,8 +292,8 @@ return module.exports;})(),
   return (function() {
     var module = { exports: undefined };
     // Default data, so we don't have to write this a lot of times
-var defaultData = _r('s'),
-    handlers    = _r('b');
+var defaultData = _r('j'),
+    handlers    = _r('5');
 
 function UPromise(executor) {
   // Keep a reference & inject default data
@@ -323,12 +313,12 @@ function UPromise(executor) {
   }
 }
 
-UPromise.resolve         = _r('g')(UPromise);
-UPromise.reject          = _r('7')(UPromise);
-UPromise.prototype.catch = _r('m');
-UPromise.prototype.then  = _r('sf')(UPromise);
-UPromise.all             = _r('t')(UPromise);
-UPromise.race            = _r('6')(UPromise);
+UPromise.resolve         = _r('d')(UPromise);
+UPromise.reject          = _r('n')(UPromise);
+UPromise.prototype.catch = _r('y');
+UPromise.prototype.then  = _r('s')(UPromise);
+UPromise.all             = _r('jv')(UPromise);
+UPromise.race            = _r('m')(UPromise);
 UPromise.prototype.name  = 'UPromise';
 module.exports           = UPromise;
     return module.exports;
