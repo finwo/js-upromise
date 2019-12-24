@@ -20,7 +20,7 @@
     "co": "^4.6.0",
     "fs-extra": "^5.0.0",
     "jshint": "^2.9.5",
-    "mocha": "^5.1.1",
+    "mocha": "^6.2.2",
     "nyc": "^15.0.0",
     "serial-mocha": "0.0.4",
     "trackthis-helpers": "^0.4.2",
