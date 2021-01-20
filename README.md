@@ -1,12 +1,7 @@
 UPromise
 ========
 
-[![Codetree](https://codetree.com/images/managed-with-codetree.svg)](https://codetree.com/projects/gX1r)
-
 [![npm](https://img.shields.io/npm/v/upromise.svg?style=flat-square)](https://npmjs.com/package/upromise/)
-[![Scrutinizer Build](https://img.shields.io/scrutinizer/build/g/finwo/js-upromise.svg?style=flat-square)](https://scrutinizer-ci.com/g/finwo/js-upromise/)
-[![Scrutinizer](https://img.shields.io/scrutinizer/g/finwo/js-upromise.svg?style=flat-square)](https://scrutinizer-ci.com/g/finwo/js-upromise/)
-[![Scrutinizer Coverage](https://img.shields.io/scrutinizer/coverage/g/finwo/js-upromise.svg?style=flat-square)](https://scrutinizer-ci.com/g/finwo/js-upromise/)
 [![npm](https://img.shields.io/npm/l/upromise.svg?style=flat-square)](https://npmjs.com/package/upromise/)
 
 A tiny promise library
