@@ -1,6 +1,6 @@
 {
   "name": "upromise",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Micro promise library",
   "main": "dist/core.js",
   "scripts": {
