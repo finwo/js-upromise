@@ -4,3 +4,4 @@ node_modules/
 test-output.txt
 coverage/
 .nyc_output/
+dist/
